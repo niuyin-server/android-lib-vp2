@@ -15,8 +15,7 @@ object ViewPager2Util {
     fun cancleViewPagerShadow(viewPager2:ViewPager2){
         try {
             //取消viewPager2的阴影
-            val recyclerViewField: Field =
-                ViewPager2::class.java.getDeclaredField("mRecyclerView")
+            val recyclerViewField: Field = ViewPager2::class.java.getDeclaredField("mRecyclerView")
             recyclerViewField.isAccessible = true
             val recyclerView = recyclerViewField[viewPager2] as RecyclerView
             recyclerView.overScrollMode = View.OVER_SCROLL_NEVER
@@ -28,8 +27,7 @@ object ViewPager2Util {
     fun getRecycleFromViewPager2(viewPager2:ViewPager2) : RecyclerView? {
         return try {
             //取消viewPager2的阴影
-            val recyclerViewField: Field =
-                ViewPager2::class.java.getDeclaredField("mRecyclerView")
+            val recyclerViewField: Field = ViewPager2::class.java.getDeclaredField("mRecyclerView")
             recyclerViewField.isAccessible = true
             val recyclerView = recyclerViewField[viewPager2] as RecyclerView
             recyclerView
